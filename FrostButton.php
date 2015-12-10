@@ -1,26 +1,29 @@
 <?php
 //Show button according to time.
 //Copyright © James Vandersluis 2015
+//Description: Echo desired code within a certain time parameter.
 
-Function FrostTimeButton($start, $end){
+Function FrostTimeButton($start, $end, $timed_code){
 													//Param #1: Time Button Starts To Show.
 													//Param #2: Time Button Will Disapear.
 	$now = date('G',time());						//Get Time in Integer Format
-	$Image_path = "YOURIMAGE.PNG";					//Set This Property To Your Image
 	if($now >= $start && $now <= $end){ 
-    	echo "<img src=\"$Image_path\">";
+    	echo "$timed_code";
 	}
 }
 
-Function FrostTimeButton($s1, $e1, $s2, $e2){
+Function FrostTimeButton($s1, $e1, $s2, $e2, $timed_code){
 													//Second method for multi-time support
 	$now = date('G',time());						//Get Time in Integer Format
-	$Image_path = "YOURIMAGE.PNG";					//Set This Property To Your Image
 	if($now >= $s1 && $now <= $e1){ 
-    	echo "<img src=\"$Image_path\">";
+    	echo "$timed_code";
 	}else if($now >= $s2 && $now <= $e2){
-		echo "<img src=\"$Image_path\">";
+		echo "$timed_code";
 	}
 }
+
+//Example usage:
+//include ("FrostButton.php");
+//<?php FrostTimeButton(12, 13, "<p>Hello world</p>") ? >
 
 ?>
